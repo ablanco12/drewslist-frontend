@@ -1,5 +1,7 @@
 import React from "react";
-
+import PostCards from "./components/PostCards.jsx";
+import { Route, Switch } from "react-router-dom";
+import MainPage from "./components/MainPage.jsx";
 import "./App.css";
 
 class App extends React.Component {
@@ -7,21 +9,34 @@ class App extends React.Component {
     postData: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.fetchPosts();
+    // const response = await fetch(`http://localhost:3000/posts`);
+    // const json = await response.json();
+    // console.log(json, "json");
   }
 
   fetchPosts = () => {
-    fetch(`https://localhost:3000/posts`)
+    fetch(`http://localhost:3000/posts`)
       .then(resp => resp.json())
-      .then(data => console.log("data:", data));
+      .then(data => {
+        this.setState({
+          postData: data
+        });
+      });
   };
 
   render() {
     return (
       <div>
-        <h1>Welcome to drewsList!</h1>
-        <h2>FOR SALE</h2>
+        <Switch>
+          <Route>
+            <MainPage />
+          </Route>
+          <Route>
+            <PostCards postData={this.state.postData} />
+          </Route>
+        </Switch>
       </div>
     );
   }
