@@ -21,6 +21,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Welcome to drewsList!</h1>
+        <h2>FOR SALE</h2>
       </div>
     );
   }
