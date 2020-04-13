@@ -42,6 +42,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "1.5em" : "3em"
       }}
     />
+
     <Header
       as="h2"
       content="The best way to buy / sell / trade."
@@ -73,6 +74,7 @@ class DesktopContainer extends Component {
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
@@ -102,6 +104,7 @@ class DesktopContainer extends Component {
                 <Menu.Item
                   as="a"
                   name="Home"
+                  link={true}
                   active={activeItem === "Home"}
                   onClick={this.handleItemClick}
                 >
@@ -110,6 +113,7 @@ class DesktopContainer extends Component {
                 <Menu.Item
                   as="a"
                   name="Listings"
+                  link={true}
                   active={activeItem === "Listings"}
                   onClick={this.handleItemClick}
                 >
@@ -237,12 +241,12 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
+    {/* <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
+              We Help by providing a free user-friendly platform!
             </Header>
             <p style={{ fontSize: "1.33em" }}>
               We can give your company superpowers to do things that they never
@@ -272,14 +276,14 @@ const HomepageLayout = () => (
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
+    </Segment> */}
 
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
           <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
+              "Easy, yet SIMPLE."
             </Header>
             <p style={{ fontSize: "1.33em" }}>
               That is what they all say about us
@@ -287,11 +291,14 @@ const HomepageLayout = () => (
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
+              "I bought a TV with no BLUE TINT!"
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              <Image avatar src="/images/avatar/large/nan.jpg" />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+              <Image
+                avatar
+                src="https://media-exp1.licdn.com/dms/image/C4E03AQH9GKL8Vy8xEA/profile-displayphoto-shrink_800_800/0?e=1592438400&v=beta&t=KjkeiELsBZ1ksHF9czLQOSLamgO58pbweaV8F29p9lc"
+              />
+              <b>Sr.</b> Master Chief Lietenant Major Blanco
             </p>
           </Grid.Column>
         </Grid.Row>

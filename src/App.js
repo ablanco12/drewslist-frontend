@@ -1,7 +1,8 @@
 import React from "react";
 import PostCards from "./components/PostCards.jsx";
+import PostListing from "./components/PostListing.jsx";
 import { Route, Switch } from "react-router-dom";
-import MainPage from "./components/MainPage.jsx";
+import HomePage from "./components/HomePage.jsx";
 import "./App.css";
 
 class App extends React.Component {
@@ -30,12 +31,12 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route>
-            <MainPage />
-          </Route>
-          <Route>
-            <PostCards postData={this.state.postData} />
-          </Route>
+          <Route path="/home" render={() => <HomePage />} />
+          <Route path="/post" render={() => <PostListing />} />
+          <Route
+            path="/listings"
+            render={() => <PostCards postData={this.state.postData} />}
+          />
         </Switch>
       </div>
     );

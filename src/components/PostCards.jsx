@@ -21,7 +21,7 @@ class CardExampleColumnCount extends Component {
                 <Card.Description>{post.body}</Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <a>
+                <a href="#">
                   <Icon name="location arrow" />
                   {post.location}
                 </a>
