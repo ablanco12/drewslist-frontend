@@ -40,7 +40,11 @@ class App extends React.Component {
     };
     fetch(`http://localhost:3000/posts`, configObj)
       .then(resp => resp.json())
-      .then(post => console.log("post:", post));
+      .then(post => {
+        this.setState({
+          postData: post
+        });
+      });
   };
 
   render() {
