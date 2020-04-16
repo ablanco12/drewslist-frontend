@@ -103,6 +103,7 @@ class DesktopContainer extends Component {
               <Container>
                 <Menu.Item
                   as="a"
+                  href="/home"
                   name="Home"
                   link={true}
                   active={activeItem === "Home"}
@@ -112,6 +113,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item
                   as="a"
+                  href="/listings"
                   name="Listings"
                   link={true}
                   active={activeItem === "Listings"}
@@ -121,6 +123,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item
                   as="a"
+                  href="/post"
                   name="Post"
                   active={activeItem === "Post"}
                   onClick={this.handleItemClick}
@@ -129,11 +132,12 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 {/* <Menu.Item as="a">Company</Menu.Item> */}
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
+                  <Button as="a" href="/login" inverted={!fixed}>
                     Log in
                   </Button>
                   <Button
                     as="a"
+                    href="/signup"
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: "0.5em" }}

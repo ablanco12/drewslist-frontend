@@ -1,6 +1,8 @@
 import React from "react";
 import PostCards from "./components/PostCards.jsx";
 import PostListing from "./components/PostListing.jsx";
+import LoginPage from "./components/LoginPage.jsx";
+import SignUpPage from "./components/SignUpPage.jsx";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage.jsx";
 import "./App.css";
@@ -27,6 +29,20 @@ class App extends React.Component {
       });
   };
 
+  fetchPostListing = event => {
+    event.preventDefault();
+    const configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify()
+    };
+    fetch(`http://localhost:3000/posts`, configObj)
+      .then(resp => resp.json())
+      .then(post => console.log("post:", post));
+  };
+
   render() {
     return (
       <div>
@@ -37,6 +53,8 @@ class App extends React.Component {
             path="/listings"
             render={() => <PostCards postData={this.state.postData} />}
           />
+          <Route path="/login" render={() => <LoginPage />} />
+          <Route path="/signup" render={() => <SignUpPage />} />
         </Switch>
       </div>
     );
