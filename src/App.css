@@ -48,3 +48,9 @@
   height: 90%;
   min-height: 600px;
 }
+
+.card-listings {
+  padding-top: 7.5em;
+  padding-right: 7.5em;
+  padding-left: 7.5em;
+}

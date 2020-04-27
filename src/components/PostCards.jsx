@@ -6,7 +6,8 @@ class CardExampleColumnCount extends Component {
     const postData = this.props.postData;
     console.log("POST DATA:", postData);
     return (
-      <div>
+      <div className="card-listings">
+        <h1>Listings</h1>
         <Card.Group itemsPerRow={6}>
           {postData.map(post => (
             <Card>
@@ -24,6 +25,12 @@ class CardExampleColumnCount extends Component {
                 <a href="#">
                   <Icon name="location arrow" />
                   {post.location}
+                </a>
+              </Card.Content>
+              <Card.Content extra>
+                <a href="#">
+                  <Icon name="address card outline" />
+                  {post.email}
                 </a>
               </Card.Content>
             </Card>
